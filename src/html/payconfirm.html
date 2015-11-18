@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+       <link rel="stylesheet" href="/css/common/public.css?ver=">
+       <link rel="stylesheet" type="text/css" href="/css/pages/payconfirm.css?ver=">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    </head>
+    <body>
+{=include file='common/top.html'=}
+<div class='wrap'>
+
+<div class='title1'><i class='logo'></i>您的订单已生成</div>
+<table style='width:100%'>
+	<tr><td class='td1' colspan='3'><span>2015-09-12  12:32</span><span>2015-09-12  12:32</span></td></tr>
+	<tr><td class='td2'>特权名称</td><td class='td2'>特权说明</td><td class='td2'>价格</td></tr>
+	<tr><td class='td3'>{=if $row.decorate_info.img!=''=}<img src='{=$row.decorate_info.img=}' style='margin-left:10px;' width='80px' class='fl'>{=/if=}<div {=if $row.decorate_info.img!=''=} class='fl' {=/if=} style='line-height: 80px; padding-left: 10px;'>{=$row.decorate_info.title=}</div></td><td class='td3'>{=$row.decorate_info.desc=}</td><td class='td3'><div style='line-height:22px;'>￥{=$row.price/100=}</div><span id='payFn' class='button'>去支付</span></td></tr>
+</table>
+
+<div class="img-wrap" id="statusImg">
+  <img src="/images/product/purchase-loading.gif" alt="">
+</div>
+<p id="statusStr" class='statusStr'>正在处理中...</p>
+
+</div>
+<script>
+
+$scope.data = {id:{=$row.id=},data_status:{=$row.data_status=},count:1,successURL:{=$successURL=}}
+</script>
+
+{=include file='common/core.html'=}
+<script type="text/javascript" src="http://n.sinaimg.cn/lib/core/require.js" data-main="http://n.sinaimg.cn/astro/xuyuanxing/js/pages/purchase"></script>
+
+
+ {=include file='common/bottom.html'=}
+    </body>
+</html>

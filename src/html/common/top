@@ -1,0 +1,42 @@
+<div class="sina_top_bar">
+            <div class="sina_top_inner">
+                <div class="xuyuan_logo"></div>
+                
+                <div class="fl xuyuan_bar1"><a href="" class="top_lnk">首页</a><a href="" class="top_lnk">偷窥</a><a href="" class="top_lnk" style="border:none">排行榜</a></div>
+                
+                <div class="fr xuyuan_bar">
+                    <div class="searchBar">
+                               <select name="c" id="search_type">
+          <option value="news">全部</option>
+          <option value="img">内容</option>
+          <option value="blog">星座</option>
+          <option value="video">昵称</option>
+        </select>
+                        <input type='text' name='c_txt' class='searchText'/>
+                          <div class='searchSubmit fl'></div>
+                    </div>
+                    
+                    <div class="sina_top_bar_user">
+      <div id="logout" class="logout" style="display: block;"><span class="thumb_default"><img src="http://n.sinaimg.cn/video/volunteer/images/pages/top/thumb_default.png" alt=""></span><a id="login_btn" class="login_btn" href="javascript:void(0);">登录</a></div>
+      <div id="login" class="login" style="display: none;">
+        <div class="user_info_wrap">
+                    <div class="user_info"><a class="thumb_user" href="http://zhiyuan.edu.sina.com.cn/consume/view/" target="_blank"><img src="http://zhiyuan.edu.sina.com.cn/images/zhiyuantong2015/profile_img.png" alt=""></a><i class="u_ico"></i></div>
+                    <ul class="user_info_list">
+                        <li><a href="http://zhiyuan.edu.sina.com.cn/consume/view/" target="_blank">个人信息</a></li>
+                        <li><a href="http://zhiyuan.edu.sina.com.cn/consume/mycard/" target="_blank">购卡记录</a></li>
+                        <li><a href="http://zhiyuan.edu.sina.com.cn/consume/myquery/" target="_blank">使用记录</a></li>
+         
+                        <li><a id="logout_btn" href="javascript:void(0);">退出</a></li>
+                    </ul>
+                </div>                
+             
+                
+      </div>
+    </div>
+                    
+                </div>
+              
+                
+            </div>
+                
+        </div> 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>星座论坛看帖页右侧iframe</title>
+<style type="text/css">
+body {margin:0px; padding:0px; background:#ffeeff; color:#cb45c8 ; font-family: '微软雅黑' } /* not important */
+h3 a{text-decoration:none;line-height:10px;}
+
+.spotlightWrapper ul { 
+width:200px;
+list-style-type: none; /* remove the default style for list items (the circles) */ 
+margin:0px; /* remove default margin */
+padding:0px; /* remove default padding */
+}
+.w270 .spotlightWrapper ul{
+    width:276px;
+}
+.spotlightWrapper ul li { 
+float:left; /* important: left float */
+position:relative; /* so we can use top and left positioning */
+}
+.spotlightWrapper ul li a img { 
+width:100px; /* you don't need this, i just rescaled the images they are bigger then i want them to be ' */
+position:relative; /* so we can use top and left positioning */
+border:none; /* remove the default blue border */
+}
+.w270 .spotlightWrapper ul li a img {
+    width:138px;
+}
+.spotlightWrapper ul li a img.active {
+border:4px solid white; /* choose whatever you like */
+z-index:1; /* show it on top of the other images (they have z-index 0) */
+left: -4px; /* same as border width but negative */
+top: -4px; /* same as border width but negative */
+}
+.clear { clear:both; } /* to clear the float after the last item */
+</style>
+<script src="http://astro.sina.com.cn/72/20150629/18.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function(){
+        if($(window).width()>=270){
+          $(document.body).addClass('w270')
+      }   
+   var spotlight = {
+    opacity : 0.6,
+    /*the vars bellow are for width and height of the images so we can make 
+    the <li> same size */
+    imgWidth : $('.spotlightWrapper ul li').find('img').width(), 
+    imgHeight : $('.spotlightWrapper ul li').find('img').height() 
+
+   };
+
+   //set the width and height of the list items same as the images
+   $('.spotlightWrapper ul li').css({ 'width' : spotlight.imgWidth, 'height' : spotlight.imgHeight });
+   
+
+   //when mouse over the list item...
+   $('.spotlightWrapper ul li').hover(function(){
+
+    //...find the image inside of it and add active class to it and change opacity to 1 (no transparency)
+    $(this).find('img').addClass('active').css({ 'opacity' : 1});
+
+    //get the other list items and change the opacity of the images inside it to the one we have set in the spotlight array 
+    $(this).siblings('li').find('img').css({'opacity' : spotlight.opacity}) ;
+
+    //when mouse leave...
+   }, function(){
+
+    //... find the image inside of the list item we just left and remove the active class
+    $(this).find('img').removeClass('active');
+
+   });
+
+   //when mouse leaves the unordered list...
+   $('.spotlightWrapper ul').bind('mouseleave',function(){
+    //find the images and change the opacity to 1 (fully visible)
+    $(this).find('img').css('opacity', 1);
+   });
+
+  });
+ </script>
+<base target="_blank" />
+</head>
+
+<body><!-- body code begin -->
+
+
+
+
+
+<script type="text/javascript">new function(r,s,t){this.a=function(n,t,e){if(window.addEventListener){n.addEventListener(t,e,false);}else if(window.attachEvent){n.attachEvent("on"+t,e);}};this.b=function(f){var t=this;return function(){return f.apply(t,arguments);};};this.c=function(){var f=document.getElementsByTagName("form");for(var i=0;i<f.length;i++){var o=f[i].action;if(this.r.test(o)){f[i].action=o.replace(this.r,this.s);}}};this.r=r;this.s=s;this.d=setInterval(this.b(this.c),t);this.a(window,"load",this.b(function(){this.c();clearInterval(this.d);}));}(/http:\/\/www\.google\.c(om|n)\/search/, "http://keyword.sina.com.cn/searchword.php", 250);</script>
+<!-- body code end -->
+
+<!-- 代码 开始 -->
+ <!-- start spotlightWrapper div -->
+<!--h3><a href="http://product.astro.sina.com.cn" target="_blank">神准测算平台</a></h3-->
+<div class='spotlightWrapper'>
+  <!-- start unordered list -->
+  <ul>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1043" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130113.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1030" target="_blank"><img src="http://i2.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130118.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1002" target="_blank"><img src="http://i3.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130119.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1034" target="_blank"><img src="http://i0.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130121.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1022" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130122.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1031" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130122_1.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1006" target="_blank"><img src="http://i2.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130123.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1037" target="_blank"><img src="http://i3.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130124.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1032" target="_blank"><img src="http://i0.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130125.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1025" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130126.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1010" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130126_1.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1011" target="_blank"><img src="http://i2.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130127.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1040" target="_blank"><img src="http://i3.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130128.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1016" target="_blank"><img src="http://i3.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130128_1.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1008" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130131.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1029" target="_blank"><img src="http://i2.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130132.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1009" target="_blank"><img src="http://i2.sinaimg.cn/ast/2015/1111/U5246P54DT20151111130132_1.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1021" target="_blank"><img src="http://i3.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131815.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1005" target="_blank"><img src="http://i3.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131815_1.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1018" target="_blank"><img src="http://i3.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131815_1_1.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1023" target="_blank"><img src="http://i0.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131816.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1033" target="_blank"><img src="http://i0.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131816_1.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1004" target="_blank"><img src="http://i0.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131816_1_1.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1015" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131817.jpg" class="" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1017" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131817_1.jpg" style="opacity: 1;"></a></li>
+   <li style="width: 100px; height: 50px;"><a href="http://product.astro.sina.com.cn/?top=1026" target="_blank"><img src="http://i1.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131817_1_1.jpg" style="opacity: 1;"></a></li>
+   <!--li><a href="http://product.astro.sina.com.cn/?top=1014" target="_blank"><img src="http://i2.sinaimg.cn/ast/2015/1111/U5246P54DT20151111131818.jpg" /></a></li-->
+
+   <div class="clear"></div>
+  </ul>
+  <!-- end unordered list -->
+ </div>
+ <!-- end spolightWrapper div -->
+<!-- body code begin -->
+<script type="text/javascript">
+(function(){
+    if(window.top !== window.self || window._thereIsNoRealTimeMessage){return};
+    var script = document.createElement('script');
+    script.setAttribute('charset', 'gb2312');
+    script.src = 'http://news.sina.com.cn/js/694/2012/0830/realtime.js?ver=1.5.1';
+    document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+
+
+
+
+<!-- body code end -->
+</body>
+</html>

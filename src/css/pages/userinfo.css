@@ -1,0 +1,420 @@
+@import "../module/pager.css";
+a{
+	color: #000;
+}
+.usr-img{
+	width: 156px;
+	height: 156px;
+	float: left;
+	border-radius: 78px;
+	border: 2px solid #3c1942;
+}
+.user-info{
+	margin: 30px 0 40px;
+	float: left;
+}
+.wrap{
+	width: 1180px;
+	margin: 0 auto;
+}
+.user-name{
+	line-height: 46px;
+	height: 46px;
+    color: #3c1942;
+    font-size: 24px;
+    float: left;
+}
+.user-horo{
+	    color: #737373;
+    font-size: 14px;
+    float: left;
+    height: 46px;
+    line-height: 50px;
+    margin-left: 10px;
+}
+.user-pink{
+	color: #c38ad7;
+	font-size: 14px;
+    float: left;
+    height: 46px;
+    line-height: 50px;
+    margin-left: 10px;
+}
+.user-info-r{
+	float: left;
+	margin-left: 30px;
+}
+.user-loc{
+	height: 30px;
+	line-height: 30px;
+}
+.user-loc li{
+	font-size: 14px;
+	color: #666;
+	float: left;
+	margin-right: 10px;
+}
+.user-fav li{
+	font-size: 16px;
+	color: #000;
+	height: 46px;
+	line-height: 28px;
+	float: left;
+    border-right: 1px solid #b7b7b7;
+}
+.user-fav li i{
+	display: block;
+	height: 23px;
+	text-align: center;
+	padding: 0 14px;
+}
+.user-fav .heart-fav{
+	background: url(../../images/pages/wishdetailBg.png) -20px -860px;
+    width: 30px;
+}
+.user-fav i.first{
+	padding-left: 0;
+}
+.user-fav li.last{
+	border-right: none;
+}
+.tabs{
+width: 100%;
+height: 38px;
+line-height: 38px;
+border-bottom: 3px solid #3c1942;
+overflow: hidden;
+margin-bottom: 30px;
+font-size: 20px;
+clear: both;
+}
+.tabs li{
+	float: left;
+	padding: 0 25px;
+	color: #000;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.tabs li i{
+   color: #c38ad7;
+   padding-left: 8px;
+}
+.tabs li.selected{
+	background: #3c1942;
+	color: #fff;
+}
+
+.wish-cards{
+	width: 512px;
+	padding:10px 26px;
+	float: left;
+	border: 1px solid #cccccc;
+	margin: 30px 0;
+}
+.wish-cards-title{
+	margin-bottom: 20px;
+}
+.wish-tips-box{
+	    float: left;
+    position: relative;
+    width: 36px;
+    height: 1px;
+    margin-right: 5px;
+}
+.wish-tips{
+      position: absolute;
+    background: #c38ad7;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 26px;
+    padding-top: 10px;
+    width: 100%;
+    top: -10px;
+}
+.star-name{
+	color: #3c1942;
+	font-size: 20px;
+	font-weight: bold;
+	float: left;
+}
+.star-time{
+	color: #666666;
+	font-size: 14px;
+    float: left;
+    margin-top: 7px;
+    margin-left: 5px;
+}
+.star-hide{
+    float: right;
+    height: 32px;
+    width: 30px;
+    background: url(../../images/pages/wishdetailBg.png) -30px -567px;
+    margin-left: 10px;
+      cursor: pointer;
+}
+.star-hide-sel{
+	background: url(../../images/pages/wishdetailBg.png) -98px -567px;
+}
+.star-del{
+float: right;
+  height: 32px;
+  width: 25px;
+    background: url(../../images/pages/wishdetailBg.png) -37px -617px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.wish-cards-content{
+	color: #333;
+	font-size: 14px;
+	line-height: 26px;
+	margin: 10px auto;
+	height: 110px;
+	overflow: hidden;
+	    word-wrap: break-word;
+}
+.wish-cards-bottom{
+	overflow: hidden;
+}
+.wish-cards-bottom li{
+	font-size: 14px;
+	float: left;
+	margin-right: 5px;
+	line-height: 22px;
+}
+.wish-cards-bottom i{
+	color: #335e98;
+}
+.wish-cards-bottom .button{
+	width: 80px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	background: #3c1942;
+	float: right;
+	margin-left: 10px;
+}
+.tabs-container{
+	position: relative;
+}
+.pageNumWrap{
+	position: static;
+	margin: 20px auto;
+}
+#uni_footer{
+  border-top: 1px solid #d8d8d8;	
+}
+
+.pop-overlay {
+    background-color: rgb(0,0,0);
+    filter: Alpha(opacity=40);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 1000;
+}
+@media screen and (min-width: 200px) {
+.pop-overlay{
+  background-color: rgba(0, 0, 0, 0.4);
+  filter:none;
+}
+}
+
+.popdiv{
+	position: absolute;
+    text-align: center;
+    z-index: 1999;
+    top: 300px;
+    width: 100%;
+}
+.pop-container{
+	padding: 30px 20px;
+	display: inline-block;
+	background: #fff;
+	position: relative;
+}
+.pop-close{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: url(../../images/pages/wishdetailBg.png) -33px -614px;
+	cursor: pointer;
+}  
+.pop-content{
+	width: 358px;
+}
+.pop_tabs{
+	border-bottom: 1px solid #3c1942;
+	font-size: 16px;
+	margin-bottom: 32px;
+	overflow: hidden;
+}
+.pop_tabs span{
+	float: left;
+	width: 75px;
+	color: #000；
+	height: 25px;
+	line-height: 25px;
+	margin-right: 60px;
+	cursor: pointer;
+}
+.pop_tabs span.on{
+	background: #3c1942;
+	color: #fff;
+}
+
+.stars-logo{
+    width: 100px;
+    float:left;
+    line-height: 70px;
+    height: 70px;
+    font-size:20px;
+    background: url(../../images/pages/bg.png);
+}
+.stars-title{
+    font-size:20px;
+    line-height: 70px;
+    height: 70px;
+}
+.lv2{
+    background-position:-7px -638px;
+}
+.lv3{
+    background-position:-7px -733px;
+}
+.lv4{
+    background-position:-15px -834px;
+}
+.f16{
+    font-size:16px;
+    line-height: 26px;
+}
+.f14{
+    font-size:14px;
+    line-height: 24px;
+}
+.starts-info{
+	float: right;
+	width: 240px;
+	text-align: left;
+}
+.decorateInfo{
+	display: none;
+}
+.show{
+	display: block;
+}
+.f18{
+	font-size: 18px;
+	color: #333;
+	text-align: left;
+}
+.pop-content .btn{
+	cursor: pointer;
+	float: right;
+	background: #3c1942;
+	color: #fff;
+	font-size: 16px;
+	margin-right: 15px;
+	margin-top: 15px;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 15px;
+}
+.pop-content .btnSmall{
+	cursor: pointer;
+	float: right;
+	background: #3c1942;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 15px;
+	margin-top: 15px;
+	height: 26px;
+	line-height: 26px;
+	width: 80px;
+	text-align: center;
+}
+.card-user-pic{
+	float: left;
+	width: 36px;
+	height: 36px;
+	border-radius: 18px;
+}
+.card-user-name{
+	font-size: 16px;
+	color: #264792;
+	float: left;
+	margin: 5px 0 0 10px;
+}
+.card-user-horo{
+	float: left;
+	font-size: 14px;
+	margin: 5px 0 0 10px;
+}
+.my-comment-bottom{
+    height: 47px;
+    line-height: 47px;
+    overflow: hidden;
+    border-top: 1px solid #CCC;
+    position: absolute;
+    width: 538px;
+    left: 0;
+    bottom: 0;
+    padding-left: 25px;
+    background: #fdf9ff;
+}
+.wish-cards-comment{
+	position: relative;
+	padding-bottom: 60px;
+}
+.unpay-star-name{
+	font-size: 14px;
+	float: left;
+	color: #3c1942;
+	margin-right: 40px;
+	font-weight: bold;
+}
+.unpay-star-time{
+	float: right;
+	color: #4e4e4e;
+	font-size: 12px;
+}
+.unpay-wish-cards-title{
+	padding-bottom: 10px;
+	overflow: hidden;
+	border-bottom: 1px solid #3c1942;
+}
+.purple{
+	color: #3c1942;
+}
+.charge-amount{
+	line-height: 24px;
+	height: 24px;
+	overflow: hidden;
+    
+}
+.charge-amount input{
+	width: 37px;
+	float: left;
+	text-align: center;
+}
+.charge-amount i{
+	background: #f0f0f0;
+	float: left;
+	width: 18px;
+	cursor: pointer;
+	text-align: center;
+}
+.wish-cards-forbidden{
+	    background: url(../../images/pages/wishdetailBg.png) -109px -910px;
+    width: 200px;
+    height: 80px;
+    margin-left: 186px;
+}

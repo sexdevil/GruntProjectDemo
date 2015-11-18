@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>偷窥他们的心事_许愿星_新浪星座_新浪网</title>
+		<meta name="keywords" content="{=$pageKeywords=}">
+		<meta name="description" content="{=$pageDescription=}">
+           <!-- build:css css/common/public.css-->
+       <link rel="stylesheet" href="http://n.sinaimg.cn/astro/xuyuanxing/css/common/public.css?ver={=$cssVer=}">
+            <!-- endbuild -->
+            <!-- build:css css/pages/peep.css-->
+       <link rel="stylesheet" type="text/css" href="http://n.sinaimg.cn/astro/xuyuanxing/css/pages/peep.css?ver={=$cssVer=}">
+              <!-- endbuild -->
+    </head>
+    <body>
+{=include file='common/top.html'=}
+<div class='wrap clearfix'>
+ <div class='leftWrap'>
+  <div class='bigtitle'>
+  <h2>偷窥</h2>
+  </div>
+  <div class='clearfix selbar'>
+  <select class='seltop' id='timeSel'><option value='00'>按发布时间</option>
+  <option value='86400'>一天</option>
+  <option value='2592000'>一个月以内</option>
+  </select>
+  <select class='seltop' id='HorSel'><option value='00'>按发布星座</option></select>
+  <select class='seltop' id='PriceSel'>
+    <option value='00'>按付费级别</option>
+    {=foreach from=$decorateList key=key item=item=}
+   <option value='{=$item.id=}'>{=$item.title=}</option>
+   {=/foreach=}
+  </select>
+  </div>
+
+  <div id='commentContain'>Loading..</div>
+  {=literal=}
+     
+     <script id="comment_tmpl" type="text/x-dot-template">
+     {{~it:value:index}}
+         <div class="comment_list">
+        <div class="item clearfix" comment-type="item">
+          <!-- 头像 start -->
+          
+          <div class="head">
+          {{? value.decorate_level==2}}
+            <div class="crown_icon_1"></div>
+           {{?}}
+          {{? value.decorate_level==3}}
+            <div class="crown_icon_2"></div>
+           {{?}}
+           {{? value.decorate_level==4}}
+            <div class="crown_icon_3"></div>
+           {{?}}
+
+          {{? value.anonymous==0}}
+          <img src={{=value.userinfo.profile_image_url}} {{? value.decorate_level!=1}}style='border:2px solid #ffe7b2' {{?}}>
+           {{??}}
+           <img src='http://n.sinaimg.cn/astro/xuyuanxing/images/pages/sneakuser.png' {{? value.decorate_level!=1}}style='border:2px solid #ffe7b2' {{?}}>
+            {{?}}
+            {{? value.decorate_level==2}}
+             <div class="startitle">初级星</div>
+             {{?}}
+             {{? value.decorate_level==3}}
+              <div class="startitle">中级星</div>
+              {{?}}
+             {{? value.decorate_level==4}}
+              <div class="startitle">高级星</div>
+              {{?}}
+           
+          </div>  
+          <!-- 头像 end -->
+          <!-- 内容 start -->
+          <div class="cont" comment-type="itemCont">
+            <div class="info">
+              <span class="name name-weibo">
+              {{? value.anonymous==0}}
+                <span class="sina-comment-user-lnk-wrap">
+                 {{? value.anonymous==0}}
+                  {{=value.nickname}}
+                  {{?}}
+                </span>
+                 {{?}}
+              </span>
+              <span class="area">{{=$scope.horoscopeMap[value.horoscope]}}</span>
+            </div>
+            <div class="txt" comment-type="itemTxt">
+            <span comment-type='itemcontent'><a href='{{=$scope.http_host}}/wish/item/{{=value.id}}' target='_blank'>
+              {{=value.content.slice(0,100)}}{{? value.content.length>=100}}...{{?}}
+             </a>
+             </span>
+             {{? value.content.length>=100}}
+             <a href='{{=$scope.http_host}}/wish/item/{{=value.id}}' target='_blank'>[详情]</a>
+             {{?}}
+            </div>
+            <div class="action">
+              <span class="time" comment-type="time" date="{{=value.create_time}}">
+              {{? (new Date()-new Date(value.create_time.replace(/-/g,'/')))/1000/3600<1}}
+               刚刚
+               {{?}}
+              {{? (new Date()-new Date(value.create_time.replace(/-/g,'/')))/1000/3600<3 && (new Date()-new Date(value.create_time.replace(/-/g,'/')))/1000/3600>=1}}
+               1小时前
+               {{?}}
+              {{? (new Date()-new Date(value.create_time.replace(/-/g,'/')))/1000/3600<5 && (new Date()-new Date(value.create_time.replace(/-/g,'/')))/1000/3600>=3}}
+              3小时前
+               {{?}}
+              {{? (new Date()).getDate()==(new Date(value.create_time.replace(/-/g,'/'))).getDate() && (new Date()-new Date(value.create_time.replace(/-/g,'/')))/1000/3600>=5}}
+              今天 {{=value.create_time.slice(10, 16)}}
+              {{?}}
+               {{? (new Date()).getDate()!=(new Date(value.create_time.replace(/-/g,'/'))).getDate() && (new Date()-new Date(value.create_time.replace(/-/g,'/')))/1000/3600>=5}}
+             {{=value.create_time.slice(0, 16)}}
+               {{?}}
+
+              </span>
+              
+              <span class="btns">
+                
+                <span class="astro_read">阅读(<span>{{=value.hit}}</span>)</span>
+                <span class="astro_read">评论(<span>{{=value.comment_num}}</span>)</span>
+                <span {{? value.faved==0}} class="astro_com" {{??}} class="astro_com liked" {{?}}action-name='like' data-id='{{=value.id}}'>摸摸(<a href='javascript:;'>{{=value.attitude_fav}}</a>)</span>
+                <span {{? value.passed==0}} class="astro_com" {{??}} class="astro_com disliked" {{?}} action-name='dislike' data-id='{{=value.id}}'>呸(<a href='javascript:;'>{{=value.attitude_pass}}</a>)</span>
+                <span id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'#许愿星# {{=value.content.slice(0, 50)}}(分享自@新浪星座)','url':'{{=$scope.http_host}}/wish/item/{{=value.id}}','pic':'http://n.sinaimg.cn/mobileh5/035b0246/20151116/XuYuanXingTuiGuang.jpg'}">
+                                            
+                          <span class="bds_more"></span>
+                        </span>
+              </span>
+            </div>
+          </div>
+          <!-- 内容 end -->
+        </div>
+      </div>
+          {{~}}
+         </script>
+      {=/literal=}   
+ </div>
+
+<div class='rightWrap'>
+  <div class='rightTop'>
+   <img src="http://i.sso.sina.com.cn/images/login/thumb_default.png" id='usr-img-1' class='usr-img-1'>
+   <div class='txt'>写下你想说的</div>
+   <div class='txt'>分享你想分享的...</div>
+   <a href='javascript:;' class='btn' id='rightPost'>点击发布</a>
+  </div>
+  {=include file="common/userpostform.html"=}
+
+  <iframe src="http://astro.sina.com.cn/pc/2010-12-16/20/4688.html" style='width:276px;height:897px;overflow:hidden;border:none;' scrolling='no'></iframe>
+     <div  id='survey_container' class='sv_cont_c14'></div>
+
+ 
+
+{=literal=}
+       <script id="survey_tmpl" type="text/x-dot-template">
+      <form name="survey_{{=it.survey_info.poll_id}}" action="http://survey.astro.sina.com.cn/polling.php" method="post" target="_blank">
+
+      <div class="sv_title">{{=it.survey_info.vote_title}}</div>
+
+      <div class="sv_list">
+      {{ for (var key in it.question_list){ }}      
+        {{ for (var prop in it.question_list[key].answer){ }}
+        <div class="sv_option"><label><div class="sv_element"><input type="radio" name="q_{{=it.question_list[key].question_id}}" value="{{=it.question_list[key].answer[prop].answer_id}}"></div><div class="sv_txt">{{=it.question_list[key].answer[prop].name}}</div></label></div>
+        {{ } }}
+      {{ } }}
+      </div>
+
+     <input type="hidden" name="poll_id" value="{{=it.survey_info.poll_id}}">
+     <div class="sv_buttons"><input type="submit" class="r_submit" value="提交">&nbsp;&nbsp;<a href="{{=it.survey_info.url}}" target="_blank" title="查看">查看结果</a></div>
+     </form> 
+   </script>
+     {=/literal=}  
+
+</div>
+
+</div>
+{=include file='common/core.html'=}
+  <script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+
+          <script type="text/javascript" src="http://n.sinaimg.cn/lib/core/require.js" ></script>
+           <!-- build:js js/pages/peep.js-->
+          <script src="http://n.sinaimg.cn/astro/xuyuanxing/js/pages/peep.js"></script>
+          <!-- endbuild -->
+ {=include file='common/bottom.html'=}
+    </body>
+</html>

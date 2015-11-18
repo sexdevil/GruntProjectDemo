@@ -1,0 +1,236 @@
+@import "../module/sweetAlert.css";
+body {
+  background: #361741;
+}
+.leftWrap{
+  float: left;
+  background-color: white;
+}
+.result-body{
+	margin: 35px auto;
+	width: 1180px;
+}
+.search-input{
+	float:left;
+	border: none;
+	margin-top: 8px;
+	border-left: none;
+	font-size: 100%;
+	width: 330px;	
+	/*height:33px;*/
+	color: #000;
+}
+.search-submit{
+	float:left;
+	font-size: 16px;
+	height: 35px;
+	width: 90px;
+	background: #bf7dd2;
+	border: 0;
+	color: #fff;
+}
+.result-body .searchSub {
+  width: 34px;
+  height: 33px;
+  float: left;
+  background: url(../../images/pages/bg.png) -500px -356px;
+  background-color: #fff;
+ 
+  /*margin-top: 7px;*/
+}
+.timeselect{
+	float: left;
+	margin-left: 60px;
+  background: url(../../images/pages/select.png) no-repeat right;
+  background-color: #bf7dd2;
+  width: 168px;
+}
+.times{
+	height: 35px;
+	width: 168px;
+	padding-left: 10px;
+	color: #fff;
+	/*将默认的select选择框样式清除*/
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	background-color: transparent;
+  border: none;
+
+}
+.times option{
+	height: 25px; 
+  background-color: #fff;
+  color: #000;
+  text-indent: 10px;
+  padding-top: 10px;
+}
+.makechoose{  
+  background-color: #bf7dd2;  
+}
+.result_title{
+	clear: both;
+	color: #fff;
+	padding: 30px 0 30px 15px;
+}
+.re_content{
+  color: #bf7dd2;
+}
+.re_num{
+	color: #bf7dd2;
+}
+.left_comment{
+	background-color: #fff;
+	width: 695px;
+	float: left;
+  margin-bottom: 20px;
+}
+.comment_list{
+	height: 225px;
+	width: 660px;
+	margin: 0 auto;
+}
+.comment_list .item{
+	position: relative;
+	border-bottom: 1px solid #DCDCDC;
+	background-color: #fff;
+	list-style: none;
+	padding: 40px 0 0 0;
+}
+/*头像*/
+.comment_list .item .head {
+  width: 50px;
+  height: 50px;
+  padding: 20px 0 0 20px;
+}
+.comment_list .item .head img {
+  border-radius: 25px;
+  height: 50px;
+}
+/*内容*/
+.comment_list .item .cont {
+  margin: -60px 20px 0 85px;
+}
+.comment_list .item .cont .info {
+  margin-bottom: 5px;
+}
+.comment_list .item .cont .area {
+  color: #999;
+  padding-left: 15px;
+}
+.comment_list .item .cont .txt {
+  padding: 20px 0 5px;
+  line-height: 24px;
+  font-size: 16px;
+  word-wrap: break-word;
+  word-break: break-all;
+  height: 80px;
+}
+.comment_list .item .cont .action {
+  height: 26px;
+  margin: 15px 0 5px 0;
+  font-size: 14px;
+  /*text-align: left;*/
+}
+.comment_list .item .cont .action .time{
+  float: left;
+}
+.comment_list .item .cont .action .btns {
+  float: right;
+}
+.result-body .rightContain{
+  width: 410px;
+  padding: 0 30px;
+  background: #fff;
+  float: right;
+  margin-top: 0;
+}
+.astro_com{
+	margin-left: 10px;
+}
+.astro_com a{
+  color:#556aa3;
+}
+/*分页*/
+.pageNumWrap {
+  /*position: relative;*/
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+}
+.pageNumWrap a {
+  background: #e6e6e6;
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  margin: 0 3px;
+}
+.pageNumWrap .current {
+  background: #33083a;
+  color: #fff;
+}
+#bdshare{
+  float: right!important;
+  margin-left: 10px;
+}
+#bdshare .bds_more{
+  background: url(../../images/pages/share.png) no-repeat!important;
+}
+.nickname{
+  color: #264792;
+  font-size: 16px;
+}
+.timeselect select option:hover { 
+  background-color: #bf7dd2; 
+  color: #fff; 
+} 
+.startitle{
+  margin-left: 5px;
+  margin-top: 10px;
+  color: #c38ad7;
+}
+.decorateshot{
+  background: url(../../images/pages/starh.png) 4px -4px no-repeat;
+}
+.decoratemid{
+  background: url(../../images/pages/starm.png) 5px -4px no-repeat;
+}
+.headborder{
+  border:2px solid #ffca58;
+  
+}
+.astro_com {
+    cursor: pointer;
+}
+.hot-list-content{
+  overflow: hidden;
+}
+.astro_read{
+  cursor:default;
+}
+.search-box{
+  height: 35px;
+  float: left;
+  background: #fff;
+  border: 1px solid #bf7dd2;
+}
+.timeselect .ds_title{
+  padding-top: 10px;
+  padding-left: 4px;
+  color: #fff;
+  font-size: 14px;
+}
+.timeselect .ds_cont{
+  background: none;
+  height: 36px;
+}
+.dsl_cont p{
+  font-size: 14px;
+
+}

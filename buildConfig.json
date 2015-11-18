@@ -1,0 +1,10 @@
+{
+  "css":[
+    "common/public.css",
+    "pages"
+  ],
+  "core":[
+    "core/doT.min.js",
+    "core/jquery.js"
+  ]
+}

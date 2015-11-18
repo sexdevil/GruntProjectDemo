@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>{=$loginUserInfo.screen_name=}的个人中心_许愿星_新浪星座_新浪网</title>
+		<meta name="keywords" content="{=$pageKeywords=}">
+		<meta name="description" content="{=$pageDescription=}">
+       <link rel="stylesheet" href="http://n.sinaimg.cn/astro/xuyuanxing/css/common/public.css?ver=">
+       <link rel="stylesheet" type="text/css" href="http://n.sinaimg.cn/astro/xuyuanxing/css/pages/userinfo.css?ver=">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    </head>
+    <body>
+{=include file='common/top.html'=}
+
+<script>
+
+ $scope.user = {id:{=$loginUserInfo.uniqueid=}}
+ $scope.decorate_level=['删除愿望','免费','初级星','中级星','高级星']
+ $scope.horoscope = ['未知','白羊座','金牛座',   '双子座',        '巨蟹座',         '狮子座',          '处女座',         '天秤座',          
+'天蝎座','射手座', '摩羯座', '水瓶座','双鱼座'];
+ $scope.model = {};
+ $scope.model.cardData={}
+ $scope.model.cardDelId='{=$deleteServer[0].id=}'
+</script>
+
+<div class='wrap clearfix'>
+
+<div class='user-info'>	
+<img src='{=$loginUserInfo.profile_image_url=}' class='usr-img'/>
+<div class='user-info-r'>
+<div class='clearfix'>	
+<div class='user-name'>{=$loginUserInfo.screen_name=}</div><div class='user-horo'>{=$horoscopeArr[$loginUserInfo.horoscope].name=}</div>
+<!-- <a class='user-pink'>编辑资料</a> -->
+</div>
+
+<ul class='user-loc clearfix'><li>{=if $loginUserInfo.location.gender==1=}男{=else=}女{=/if=}</li><li>{=$loginUserInfo.location.province=}</li><li>{=$loginUserInfo.location.county=}</li></ul>
+
+<ul class='user-fav clearfix'>
+<li><i class='first'>我的发表</i><i class='first'>{=$wish_total=}</i></li>
+<li><i class='heart-fav'></i><i>{=$fav_total=}</i></li>
+<li><i>评论我的</i><i>{=$comment_total=}</i></li>
+<li class='last'><i>上榜数</i><i>{=$rank_total=}</i></li>
+</ul>
+</div>
+
+</div>
+
+<ul class='tabs'>
+<li class='selected'>我发布的<i node-type='number'>{=$wish_total=}</i></li>
+<li>待支付的<i node-type='number'>{=$uppay_total=}</i></li>
+<li>我评论的<i node-type='number'>{=$comment_other_total=}</i></li>
+</ul>
+
+<div class='tabs-container clearfix'>
+	<div class='cards-container clearfix' id='cards-container'>Loading...</div>
+{=literal=}
+     <script id="cardList_total" type="text/x-dot-template">       
+         {{~it:value:index}}
+          {{? (index+1)%2==0}}
+      	  <div class='wish-cards' style='float:right;'>
+          {{??}}
+          <div class='wish-cards'>
+          {{?}}
+          
+
+
+          <div class='wish-cards-title clearfix'>
+           {{? value.dynamic_data.attitude_count!=0}}
+           <div class='wish-tips-box'>
+           <div class='wish-tips'>
+           赞<br>
+               {{=value.dynamic_data.attitude_count}}
+           </div>
+           </div>
+           {{?}}
+           
+          
+           {{? value.dynamic_data.comment_count!=0}}
+            <div class='wish-tips-box'>
+            <div class='wish-tips'>
+           评论<br>
+               {{=value.dynamic_data.comment_count}}
+             </div>  
+             </div>
+           {{?}}
+           
+       
+
+          <div class='star-name'>{{=$scope.decorate_level[value.decorate_level]}}</div>
+          <div class='star-time'>{{=value.create_time}}</div>      
+
+          <a class='star-del' href='javascript:void(0);' title='删除愿望' action-name='delcard' data-id='{{=value.id}}'></a>
+          {{? value.is_del==0}}
+          <a class='star-hide' href='javascript:void(0);' title='隐藏愿望' action-name='hidecard' data-id='{{=value.id}}'></a>
+           {{??}}
+           <a class='star-hide star-hide-sel' href='javascript:void(0);' title='隐藏愿望' action-name='hidecard' data-id='{{=value.id}}'></a>
+           {{?}}
+           {{? value.decorate_level!=1}}
+           <div class='star-time' style='float:right'>还有{{=value.delay_decorate_outdate}}天到期</div>
+           {{?}} 
+          </div>
+          <a href='{{=$scope.http_host}}/wish/item/{{=value.id}}'>
+      <div class='wish-cards-content'>
+      {{=value.content}}
+      </div>
+      </a>
+
+         <ul class='wish-cards-bottom'>
+             <li>阅读(<i>{{=value.hit}}</i>)</li>
+             <li>评论(<i>{{=value.comment_num}}</i>)</li>
+             <li action-name='like' style='cursor:pointer' data-id='{{=value.id}}'>摸摸(<a>{{=value.attitude_fav}}</a>)</li>
+             <li  action-name='dislike'  style='cursor:pointer' data-id='{{=value.id}}'>呸(<a>{{=value.attitude_pass}}</a>)</li>
+
+             {{? value.delay_decorate_id!=0}}  
+              <a href='javascript:void(0);' action-name='chargecard' class='button' data-id='{{=value.id}}'>延期服务</a>
+             {{?}}
+ 
+             {{? value.decorate_level<=3}}
+             <a href='javascript:void(0);' action-name='upgradecard' class='button' data-id='{{=value.id}}'>升级</a>
+             {{?}}
+
+         </ul>
+
+      	  </div>
+      	  {{~}}
+         </script>
+
+<!-- 延期服务弹窗 -->
+   <script id='chargeTmpl' type="text/x-dot-template">
+<div class='pop-content' style='width:220px;text-align:left;'>
+<div class='f14'>说明：可使愿望/秘密保持已有形态</div>
+<div class='f14'>特权价格 :￥<i node-type='price' class='purple'></i></div>
+<div class='f14 clearfix'><i class='fl'>延期时间 : &nbsp;</i>
+<span action-name='changeAmount' class='charge-amount'>
+<i action-name='minusAmount'>-</i>
+<input type='text' action-name='inputAmount' value='1'/>
+<i action-name='addAmount'>+</i>
+天</span></div>
+<div class='f14'>总价 :￥<i node-type='priceTotal'></i></div>
+<div class='clearfix'>
+<div class='btn' action-name='cancle'>取消</div><div class='btn' action-name='confirm'>确认支付</div>
+</div>
+</div>
+</script> 
+
+
+    <script id="cardList_unpay" type="text/x-dot-template">       
+         {{~it:value:index}}
+          {{? (index+1)%2==0}}
+          <div class='wish-cards' style='float:right;'>
+          {{??}}
+          <div class='wish-cards'>
+          {{?}}
+
+          <div class='unpay-wish-cards-title'>
+          <div class='unpay-star-name'>购买特权 : {{=$scope.decorate_level[value.decorate_info.level]}}</div>
+          <div class='unpay-star-name'>价格 ：￥{{=value.price/100}}</div>
+          <div class='unpay-star-time'>下单时间 ：{{=value.create_time}}</div>
+          </div>
+      <div class='wish-cards-content'>
+      {{=value.item_info.content}}
+      </div>
+
+             <div class='wish-cards-bottom'>
+             <a href='javascript:void(0);' action-name='buycard' class='button' data-id='{{=value.id}}'>去支付</a>
+              </div>
+
+
+          </div>
+          {{~}}
+         </script>
+
+
+
+     <script id="cardList_mycomment" type="text/x-dot-template">       
+         {{~it:value:index}}
+          {{? (index+1)%2==0}}
+          <div class='wish-cards wish-cards-comment' style='float:right;'>
+          {{??}}
+          <div class='wish-cards wish-cards-comment'>
+          {{?}}
+
+
+           {{? !value.error_msg}}
+          <div class='wish-cards-title clearfix'>
+           {{? value.anonymous==0}}
+            <img class='card-user-pic' src='{{=value.userinfo.profile_image_url}}'/>
+            <div class='card-user-name'>{{=value.userinfo.screen_name}}</div>     
+            {{??}}
+              <img class='card-user-pic' src='http://n.sinaimg.cn/video/volunteer/images/pages/top/thumb_default.png'/>
+             {{?}}
+          
+             
+          <div class='card-user-horo'>{{=$scope.horoscope[value.horoscope]}}</div>
+          </div>
+          <a href='{{=$scope.http_host}}/wish/item/{{=value.id}}'>
+      <div class='wish-cards-content' style='height:80px;'>
+      {{=value.content}}
+      </div>
+      </a>
+
+       <div class='clearfix'>
+        <div class='star-time' style='margin:4px 10px 0 0;'>{{=value.create_time}}</div> 
+         <ul class='wish-cards-bottom fr'>
+             <li>阅读(<i>{{=value.hit}}</i>)</li>
+             <li>评论(<i>{{=value.comment_num}}</i>)</li>
+            <li action-name='like' style='cursor:pointer' data-id='{{=value.id}}'>摸摸(<a>{{=value.attitude_fav}}</a>)</li>
+             <li  action-name='dislike'  style='cursor:pointer' data-id='{{=value.id}}'>呸(<a>{{=value.attitude_pass}}</a>)</li>
+         </ul>
+        </div>
+           {{??}}
+           <div class='wish-cards-title clearfix'>
+           {{? value.anonymous==0}}
+            <img class='card-user-pic' src='{{=value.userinfo.profile_image_url}}'/>  
+            {{??}}
+              <img class='card-user-pic' src='http://n.sinaimg.cn/video/volunteer/images/pages/top/thumb_default.png'/>
+             {{?}}
+          
+             
+         
+          </div>
+      <div class='wish-cards-content' style='height:80px;'>
+         <div class='wish-cards-forbidden'></div>
+      </div>
+
+       <div class='clearfix'>
+        <div class='star-time' style='margin:4px 10px 0 0;'></div> 
+         <ul class='wish-cards-bottom fr'>
+             <li>&nbsp;</li>
+         </ul>
+        </div>
+          {{?}}
+
+        <div class='my-comment-bottom'>我评论道:{{=value.comment_content}}</div>
+
+
+          </div>
+          {{~}}
+         </script>
+
+      {=/literal=} 
+</div>
+
+
+
+
+</div>
+
+<script id="upgradeListTmpl" type="text/x-dot-template">     
+<div class='pop-content'>
+<div class="pop_tabs">
+{=foreach from=$decorateList key=key item=item=}
+{=if $key==$decorateList|@count-1 =}
+<span style='margin:0;' action-name='swicthTab' data-id='{=$item.id=}'>{=$item.title=}</span>
+{=else=}
+<span action-name='swicthTab' data-id='{=$item.id=}'>{=$item.title=}</span>
+{=/if=}
+{=/foreach=}
+</div>
+
+{=foreach from=$decorateList key=key item=item=}
+             <div class='clearfix decorateInfo'>
+                  <div class="stars-logo lv{=$item.sort=}"></div>
+                  <div class='starts-info'>
+                  <div class='f16'>特权价格 : {=$item.price/100=}.00￥</div>
+                  <div class='f16'>有效期 : {=$item.duration=}天</div>
+                  <div class='f14'>特权介绍 : {=$item.desc=}</div>
+                  </div>
+                  </div>
+             {=/foreach=}     
+     <div class='btn' action-name='upgradePay'>立刻购买</div>   
+</div>   
+</script>
+
+<script id='delTmpl' type="text/x-dot-template">
+<div class='pop-content' >
+<div class='f18'>删除单个条目需要付费3元，是否确认删除？</div>
+<div class='clearfix'>
+<div class='btn' action-name='cancle'>取消</div><div class='btn' action-name='confirm'>确定</div>
+</div>
+</div>
+</script> 
+
+
+
+{=include file='common/core.html'=}
+          <script type="text/javascript" src="http://n.sinaimg.cn/lib/core/require.js" data-main="http://n.sinaimg.cn/astro/xuyuanxing/js/pages/userinfo"></script>
+ {=include file='common/bottom.html'=}
+ </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+<script type="text/javascript" src="http://www.sinaimg.cn/jslib/js/jquery.1.8.2.js"></script>
+</head>
+<body>
+÷ß∏∂»∑»œ“≥
+<p id='insert'></p>
+<script>
+ var obj = {id:{=$row.id=},data_status:{=$row.data_status=},count:1};alert(1);
+ if(obj.data_status==0 && obj.count<=3){
+	$.ajax({
+		  url: '{=$HTTP_HOST=}/wish/handler/getRid',
+		  type: "POST",
+		  data: { id: obj.id, data_status: obj.data_status, count:obj.count },
+		  success: function(data){
+			if(data.status==0 && data.data.data_status==3){
+				alert(data.data.order_id);
+			}
+		  },
+		  dataType: 'json'
+	});
+ }
+ else if(obj.data_status==3){
+	$.ajax({
+		  url: '{=$HTTP_HOST=}/wish/handler/getPform',
+		  type: "POST",
+		  data: { id: obj.id, data_status: obj.data_status},
+		  success: function(data2){
+			 if(data2.data.data_status==5){
+				$.ajax({
+					  url: '{=$HTTP_HOST=}/wish/handler/getPstatus',
+					  type: "POST",
+					  data: { id: data2.data.id, data_status: data2.data.data_status, count:1},
+					  success: function(data1){
+						if(data1.data.data_status==10){
+							$.ajax({
+								  url: '{=$HTTP_HOST=}/wish/handler/getRdata',
+								  type: "POST",
+								  data: { id: data1.data.id, data_status: data1.data.data_status, count:1},
+								  success: function(data){
+									
+								  },
+								  dataType: 'json'
+							});
+						 }
+					  },
+					  dataType: 'json'
+				});
+			 }
+		  },
+		  dataType: 'json'
+	});
+ }
+</script>
+</body>
+</html>

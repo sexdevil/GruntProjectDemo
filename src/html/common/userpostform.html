@@ -1,0 +1,49 @@
+<div class='user-post-form-overlay'></div>
+<div class="user-post-form" node-type='user-post-form-outter'>
+            <div class="user-post-form-top">
+                <div class='fl' style="*width:200px;">
+                <span class='title1'>我的星座&nbsp;&nbsp;:&nbsp;&nbsp;</span><select id="astro1" name='astro' data-horo='{=$loginUserInfo.horoscope=}' class="user-post-form-selcet"></select> 
+                </div>
+                <span class="close" node-type="user-post-form-close"></span>
+                
+                
+                <div class='fr' style='margin-right:14px;'><span class='title1'>告诉TA&nbsp;&nbsp;</span><input type="text" id='wished_user' class='fl input1'/> <span class='title1'>TA的星座&nbsp;&nbsp;</span><select id="astro2" name='astro' class="user-post-form-selcet"></select> </div>
+                
+                
+            </div>
+            <div class="user-post-form-top-1" id="user-xuyuan-switch-l">
+                <div class="user-xuyuan-switch-l on" node-type="user-xuyuan-switch" data-bind="0">
+                    <div class="switch-txt">许 愿</div>
+                </div>
+                  <div class="user-xuyuan-switch-r" node-type="user-xuyuan-switch" data-bind="1">
+                    <div class="switch-txt">秘 密</div>
+                </div>  
+            </div>
+            <div class="user-bar-1">选择级别:
+                {=foreach from=$decorateList key=key item=item=}
+                <span node-type="stars-show"><label><input type="radio" name="price" data-id="{=$item.id=}" {=if $item.sort==1 =}checked='true'{=/if=} data-sort="{=$item.sort=}"/>  {=$item.title=}</label>
+                {=if $item.sort!=1 =}
+                <div class="user-post-form-pop" style="width: 240px;padding-bottom:10px;"><i node-type="user-post-form-pop-close" class="user-post-form-pop-close"></i>
+                  <div class='clearfix'>
+                  <div class="stars-logo lv{=$item.sort=}"></div><span class='stars-title'>{=$item.title=}</span>
+                  </div>
+                  <div class='f16'>特权价格 : {=$item.longer_price/100=}.00</div>
+                  <div class='f16'>有效期 : {=$item.duration=}天</div>
+                  <div class='f14'>特权介绍 : {=$item.desc=}</div>
+                </div>
+                {=/if=}  
+                </span>  
+                {=/foreach=}
+            </div>
+           <textarea class="user-bar-content" id='user-bar-content' name="content"></textarea>
+           <div class="clearfix user-post-form-bottom-1">
+           <div class="face-bar" node-type='initface'><span class="fl face" node-type='initface'></span> </div>
+           <label><input id="weibobox" type="checkbox" name="price"/>  转发到微博</label>
+           <label><input id="noname" type="checkbox" name="price"/>  匿名</label>
+           <label><input id="comment_deny" type="checkbox" name="price"/>  禁止回复</label>
+           
+           <div class="user-form-post" node-type='formpost' id="user-form-post">发布</div>
+           </div>
+        </div>
+        
+       

@@ -1,0 +1,344 @@
+.user-post-form-overlay{
+    background-color: rgb(0,0,0);
+    filter: Alpha(opacity=40);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 10000;
+}
+@media screen and (min-width: 200px) {
+.user-post-form-overlay{
+  background-color: rgba(0, 0, 0, 0.4);
+  filter:none;
+}
+}
+.user-post-form{
+   background: #25112e;
+   width:740px;
+   position: absolute;
+   color:#b5b5b5;
+   left:10px;
+   top:100px;
+   z-index: 10001;
+   display: none;
+}
+.user-post-form-top{
+    height:50px;
+    line-height:50px;
+    color: #b5b5b5;
+    font-size:16px;
+    padding-left: 20px;
+    border-bottom:1px solid #502e56;
+}
+.user-post-form-top .astro{
+    font-size:18px;
+    color:#f8f0c7;
+}
+.user-post-form-top .astroSwitch{
+    font-size:14px;
+    color:#fef3b6;
+    height:30px;
+    line-height:30px;
+    padding:0 15px;
+    border-radius:15px;
+    background: #3c1942;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right:30px;
+    cursor: pointer;
+}
+.user-post-form-top .input1{
+    background-color: #2E103C;
+    border: none;
+    color: #F8F0C7;
+    line-height: 28px;
+    height: 28px;
+    margin-top: 14px;
+    margin-right: 20px;
+}
+.user-post-form-top .close{
+    background: url(../../images/pages/bg.png) -345px -445px;
+    float: right;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-top: 16px;
+    margin-right: 16px;
+    
+}
+.user-post-form-top .close:hover{
+    background:url(../../images/pages/bg.png) -347px -481px;
+}
+.user-xuyuan-switch-l{
+    border-right:1px solid #502e56;
+    border-bottom:1px solid #502e56;
+    width:50%;
+    position: absolute;
+    left:0;
+    height:116px;
+    background: #1f0d27;
+    cursor: pointer;
+}
+.user-xuyuan-switch-r{
+    border-left:1px solid #502e56;
+    border-bottom:1px solid #502e56;
+    width:50%;
+    position: absolute;
+    right:0;
+    height:116px;
+    background: #1f0d27;
+    cursor: pointer;
+}
+.user-post-form-top-1{
+    position: relative;
+    height: 118px;
+}
+.user-post-form-top-1 .on{
+    background: none;
+    border:none;
+}
+.switch-txt{
+    color:#f8f0c7;
+    font-size:25px;   
+    padding-left:40px;
+    width:65px;
+    height:48px;
+    line-height: 48px;
+    margin: 35px auto;
+}
+.user-xuyuan-switch-l .switch-txt{
+        background: url(../../images/pages/bg.png) -208px -515px;
+}
+.user-xuyuan-switch-r .switch-txt{
+    background: url(../../images/pages/bg.png) -10px -516px;
+}
+.user-bar-1{
+    color:#b5b5b5;
+    font-size:16px;
+    line-height:22px;
+    margin:30px auto;
+    padding-left:25px;
+}
+.user-bar-1 label{
+    font-size:14px;
+    margin-left: 15px;
+    position: relative;
+}
+.user-bar-content{
+    width: 690px;
+    height: 180px;
+    margin: 20px auto;
+    background-color: #2E103C;
+    color:#F8F0C7;
+    border: none;
+    display: block;
+}
+.face{
+    width:28px;
+    height:28px;
+    background: url(../../images/pages/bg.png) -346px -528px;
+}
+.face-bar{
+    width:50px;
+    margin-top:20px;
+    float:left;
+    background: url(../../images/pages/bg.png) -324px -567px;  
+}
+.user-post-form-bottom-1{
+    margin:18px 0 30px 20px;
+    font-size:16px;
+}
+.user-form-post{
+    color: #986FAB;
+    font-size: 22px;
+    width: 130px;
+    height: 54px;
+    line-height: 54px;
+    border-radius: 28px;
+    background: #2E103C;
+    float:right;
+    text-align: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.user-form-post:hover{
+    background: #421b54;
+    color:#e1d29f;
+}
+.user-post-form-bottom-1 label{
+    margin-top:25px;
+    margin-right:20px;
+    float:left;
+}
+.selectview-postform{
+    line-height:24px; 
+   background-color: #2E103C;
+}
+.selectview-postform .dsl_cont p{
+    background: none;
+    border:1px solid #502e56;
+    color: #F8F0C7;
+}
+.selectview-postform .dsl_cont{
+     background-color: #2E103C;
+     border-bottom: none;
+     max-height:none;
+}
+.selectview-postform .dsl_cont .selected{
+      background: #2E103C;
+    color: #fff;
+}
+.user-post-form-selcet{
+    width:90px;
+}
+.selectview-postform .ds_cont{
+    color: #F8F0C7;
+    line-height: 28px;
+    height:28px;
+    background: url(../../images/pages/bg.png) -290px -565px;
+}
+.user-post-form-pop{
+    display:none;
+    background: #25112e;
+    position: absolute;
+    z-index: 999;
+    padding: 0 20px;
+    border:1px solid #341344;
+        color: #b5b5b5;
+    background: #25112e;
+}
+.user-post-form-bottom-1 .user-post-form-pop{
+    background: #2e103c;
+}
+.user-post-form-pop-select{
+/*   margin:30px auto 20px;*/
+    padding-right: 20px;
+}
+.user-post-form-pop-close{
+    width:20px;
+    height: 20px;
+    position: absolute;
+    top:5px;
+    right: 5px;
+    cursor: pointer;
+    background: url(../../images/pages/bg.png) -344px -445px;
+}
+.user-post-form-pop-close:hover{
+      background:url(../../images/pages/bg.png) -346px -481px;
+}
+.user-post-form-pop .send{
+    width:60px;
+    height:28px;
+    line-height:28px;
+    border-radius:14px;
+    text-align: center;
+    color:#986fab;
+    background: #2e103c;
+    margin: 20px auto;
+}
+.stars-logo{
+    width: 100px;
+    float:left;
+    line-height: 70px;
+    height: 70px;
+    font-size:20px;
+    background: url(../../images/pages/bg.png);
+    margin: 15px 0;
+}
+.stars-title{
+    font-size:20px;
+    line-height: 70px;
+    height: 70px;
+}
+.lv2{
+    background-position:-7px -638px;
+}
+.lv3{
+    background-position:-7px -733px;
+}
+.lv4{
+    background-position:-15px -834px;
+}
+.button{
+        font-size: 25px;
+    color: #F8F0C7;
+    background: #3C1942;
+    border: 1px solid #6B3E70;
+    cursor: pointer;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 35px;
+    text-align: center;
+    position: absolute;
+    padding-left: 33px;
+    top: 270px;
+    z-index: 99;
+}
+.button:hover{
+    background: #2e103c;
+}
+.button1{
+    left:50%;
+    width: 200px;
+    margin-left: -250px;
+    font-size: 30px;
+}
+.button2{
+     left: 50%;
+    width: 180px;
+    margin-left: 20px;
+}
+.button .wish{
+position: absolute;
+    width: 34px;
+    height: 34px;
+    left: 40px;
+    top: 17px;
+    background: url(../../images/pages/bg.png) -345px -295px;
+}
+.button .switch{
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    left: 40px;
+    top: 22px;
+    background: url(../../images/pages/bg.png) -340px -356px;
+} 
+.user-face-list{
+    width:330px;
+    padding: 20px 20px 10px;
+    position: relative;
+}
+.user-face-list li{
+    float:left;
+    height: 28px;
+    width: 28px;
+    padding: 0 5px 5px 0;
+    overflow: hidden;
+}
+.user-face-list li a{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    display: block; 
+    border:1px solid #502e56;
+}
+.user-face-list li a:hover{
+    border:1px solid #F8F0C7;
+}
+.f16{
+    font-size:16px;
+    line-height: 26px;
+}
+.f14{
+    font-size:14px;
+    line-height: 24px;
+}
+
+.user-post-form-top .title1{
+    padding-top: 4px;
+    float: left;
+}

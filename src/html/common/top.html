@@ -1,0 +1,60 @@
+<div class="sina_top_bar">
+            <div class="sina_top_inner">
+                <div class="xuyuan_logo"><a href='http://astro.sina.com.cn/' target='_blank' class='aleft'></a></div>
+                
+                <div class="fl xuyuan_bar1"><a href="{=$HTTP_HOST=}/wish/" class="top_lnk">首页</a><a href="{=$HTTP_HOST=}/wish/peep" class="top_lnk">偷窥</a><a href="{=$HTTP_HOST=}/wish/rank" class="top_lnk" style="border:none">排行榜</a></div>
+                
+                <div class="fr xuyuan_bar">
+                    <div class="searchBar" id='searchBar'>
+                               <select name="c" id="search_type">
+                          {=foreach from=$searchKeyArr key=key item=item=}      
+                        <option value="{=$key=}">{=$item=}</option>
+                         {=/foreach=}
+        </select>
+                        <input type='text' name='c_txt' class='searchText'/>
+                          <a class='searchSubmit fl' href='javascript:;' id='searchSubmit'></a>
+                    </div>
+                    
+                    <div class="sina_top_bar_user">
+      <div id="logout" class="logout" style="display: block;"><span class="thumb_default"><img src="http://n.sinaimg.cn/video/volunteer/images/pages/top/thumb_default.png" alt=""></span><a id="login_btn" class="login_btn" href="javascript:void(0);">登录</a></div>
+      <div id="login" class="login" style="display: none;">
+        <div class="user_info_wrap">
+                    <div class="user_info"><a class="thumb_user" href="{=$HTTP_HOST=}/wish/home/" target="_blank"><img src="http://zhiyuan.edu.sina.com.cn/images/zhiyuantong2015/profile_img.png" alt=""></a><i class="u_ico"></i></div>
+                    <ul class="user_info_list">
+                        <li><a href="{=$HTTP_HOST=}/wish/home/" target="_blank"><span class="fl">评论</span></a></li>
+                        <li><a href="{=$HTTP_HOST=}/wish/home/" target="_blank"><span class="fl">赞</span></a></li>
+                        <li><a href="{=$HTTP_HOST=}/wish/home/?tabname='unpay'" target="_blank"><span class="fl">待支付</span></a></li>
+         
+                        <li><a id="logout_btn" href="javascript:void(0);">退出</a></li>
+                    </ul>
+                </div>                
+             
+                
+      </div>
+    </div>
+                    
+                </div>
+              
+                
+            </div>
+                
+        </div> 
+        <script>
+        window.$scope ={}
+        $scope.http_host='{=$HTTP_HOST=}'
+         $scope.horoscopeMap = {
+         0:'保密',
+         1:'白羊座',
+         2:'金牛座',   
+         3:'双子座',        
+         4:'巨蟹座',         
+         5:'狮子座',          
+         6:'处女座',         
+         7:'天秤座',          
+         8:'天蝎座',         
+         9:'射手座',     
+         10:'魔羯座',         
+         11:'水瓶座',          
+         12:'双鱼座'
+      } 
+        </script>

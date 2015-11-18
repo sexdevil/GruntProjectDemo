@@ -1,0 +1,115 @@
+body, button, input, select, textarea {
+    font-size: 14px;
+    line-height: 1.125;
+}
+
+sub, sup {
+    line-height: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 320px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+li {
+    list-style: none;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+input, textarea {
+    outline-style: none;
+}
+
+input[type="text"], input[type="search"], input[type="password"] {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+
+textarea {
+    resize: none
+}
+
+address, caption, cite, code, dfn, em, i, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+legend {
+    color: #000;
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearit {
+    clear: both;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+/* surface下viewport不生效的解决办法 */
+@media screen and (min-width: 767px) and ( device-aspect-ratio: 16/9) {
+    @-ms-viewport {
+        width: device-width;
+        zoom: 1;
+        max-zoom: 1;
+        min-zoom: 1;
+    }
+}
+
+/* surface下IE10 点击链接，背景变色 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    a {
+        background-color: transparent;
+    }
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    image-rendering: optimizeQuality;
+}
+
+@media not screen and (orientation: landscape), not screen and (orientation: portrait) {
+    body, button, input, select, textarea {
+        font-family: 'Microsoft Yahei', 'Simsun';
+    }
+}

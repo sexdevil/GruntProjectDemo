@@ -1,0 +1,35 @@
+@background:#e6e6e6;
+@font-color:#000;
+@background-hover:#33083a;
+@font-color-hover:#fff;
+
+.pageNumWrap{
+    position: absolute;
+    top:1040px;
+    width:100%;
+    text-align: center;
+    font-size:24px;
+
+}
+
+.pageNumWrap a{
+    background: @background;
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: @font-color;
+    margin: 0 3px;
+}
+.pageNumWrap a:hover{
+	background: @background-hover;
+	color: @font-color-hover;
+}
+
+.pageNumWrap .current{
+    background: @background-hover;
+    color: @font-color-hover;
+}
+

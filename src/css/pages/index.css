@@ -1,0 +1,439 @@
+
+@import "../module/userpostform.css";
+@import "../module/pager.css";
+.bg-cover{
+    background-image:url(../../images/pages/bg_stars.jpg) ;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    min-height: 1200px;
+    width: 100%;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+/*    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;*/
+}
+
+.bg-title{
+   width: 660px;
+    height: 132px;
+    margin: 30px auto 40px;
+    background: url(../../images/pages/bg.png) 20px -23px;
+}
+
+.slide100 {
+    width: 1000px;
+    height: 1000px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+.slide100 .item {
+    width: 1000px;
+    height: 1000px;
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+    float: left;
+    -webkit-transform: translate3d(0,0,0);
+}
+.scrollLeft{
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    left: 0;
+    top: 443px;
+    background: url(../../images/pages/bg.png) -190px -652px;
+    z-index:99;
+    cursor: pointer;
+}
+.scrollRight{
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    right: 0;
+    top: 443px;
+    cursor: pointer;
+    z-index:99;
+    background: url(../../images/pages/bg.png) -439px -651px;
+}
+.scrollLeft:hover{
+  background:url(../../images/pages/bg.png) -188px -836px;
+}
+.scrollRight:hover{
+    background:url(../../images/pages/bg.png) -443px -832px;
+}
+
+.bg-theater{
+    width:1000px;
+    position:relative;
+    margin:0 auto;
+    height:100%;
+    overflow: hidden;
+}
+.bg-path{
+     width: 1300px;
+    height: 900px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -650px;
+    background: url(../../images/pages/bg-path.png) 0 -23px no-repeat;   
+}
+.big1{
+    width:130px;
+    height:130px;
+    position: absolute;
+    left:0;
+    top:0;
+    transition:.5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/bg.png) -20px -196px;   
+}
+.stars1{
+    width:55px;
+    height:55px;
+    position: absolute;
+    left:0;
+    top:0;
+    transition:.5s;
+    -webkit-transition: .5s;
+    background:url(../../images/pages/bg.png) -10px -170px;
+}
+.stars2{
+    width:55px;
+    height:55px;
+    position: absolute;
+    left:0;
+    top:0;
+    transition:.5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/bg.png) -9px -241px ; 
+}
+.stars4{
+    width:55px;
+    height:55px;
+    position: absolute;
+    left:0;
+    top:0;
+    transition:.5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/bg.png) -94px -177px; 
+}
+.stars3{
+    width:55px;
+    height:55px;
+    position: absolute;
+    left:0;
+    top:0;
+    transition:.5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/bg.png) -13px -300px;   
+}
+.moon1{
+    width:74px;
+    height: 74px;
+    position: absolute;
+    left:0;
+    top:0;
+    transition:.5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/bg.png) -200px -184px;
+}
+.moon2{
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/bg.png) -194px -290px;
+}
+.moon3{
+    width:74px;
+    height: 74px;
+    position: absolute;
+    left:0;
+    top:0;
+    transition:.5s;
+    -webkit-transition: .5s;
+    background:url(../../images/pages/bg.png) -322px -186px;
+}
+.big1{
+    width: 160px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/stars.png) -23px -12px;
+}
+.big2{
+        width: 140px;
+    height: 140px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/stars.png) -31px -180px;
+}
+.big3{
+      width: 173px;
+    height: 173px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/stars.png) -195px -4px;
+}
+.big4{
+   width: 190px;
+    height: 180px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/stars.png) -404px 4px;
+}
+.big5{
+    width: 240px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    background: url(../../images/pages/stars.png) -35px -306px;
+}
+.animation{
+     transition: 1s; 
+     -webkit-transition: 1s;  
+}
+.bg-theater .stars3:hover,.bg-theater .stars1:hover,.bg-theater .stars2:hover,.bg-theater .stars4:hover{
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.bg-theater .moon1:hover,.bg-theater .moon2:hover,.bg-theater .moon3:hover{
+       -webkit-transform: scale(1.2);
+    transform: scale(1.2);  
+}
+.bg-theater .big1:hover,.bg-theater .big2:hover,.bg-theater .big3:hover,.bg-theater .big4:hover,.bg-theater .big5:hover{
+   -webkit-transform: scale(1.2);
+    transform: scale(1.2);  
+}
+.blink1{
+    -webkit-animation: blink 2s ease-in-out infinite; animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+    0%{opacity: 1;}
+    45% {opacity: 0.3;}
+    100%{opacity: 1;}
+}
+@-webkit-keyframes blink { 
+     0%{opacity: 1;}
+    45% {opacity: 0.3;}
+    100%{opacity: 1;}
+}
+.blink2{
+    -webkit-animation: blink2 2s ease-in-out infinite; animation: blink2 2s ease-in-out infinite;
+}
+@keyframes blink2 {
+    0%{opacity: 0.5;}
+    45% {opacity: 1;}
+    100%{opacity: 0.5;}
+}
+@-webkit-keyframes blink2 { 
+      0%{opacity: 0.5;}
+    45% {opacity: 1;}
+    100%{opacity: 0.5;}
+}
+.scaleAnimate{
+     -webkit-animation: scaleAnimate 1s ease-in-out; animation: scaleAnimate 1s ease-in-out;
+}
+@keyframes scaleAnimate{
+    0%{transform:scale(1);}
+    45% {transform:scale(0.9);}
+     100% {transform:scale(1);}
+}
+@-webkit-keyframes scaleAnimate{
+    0%{-webkit-transform:scale(1);}
+    45% {-webkit-transform:scale(0.9);}
+     100% {-webkit-transform:scale(1);}
+}
+
+.user-data-tip{
+    color:#b5b5b5;
+    font-size:14px;
+    line-height: 24px;
+    background: #3a1c43;
+    opacity: 0.9;
+    filter:alpha(opacity=80);
+    width: 244px;
+    padding: 20px;
+    border-radius: 45px;
+    position:absolute;
+    left:-20px;
+    top:60px;
+    display: none;
+    cursor: pointer;
+    word-wrap:break-word;
+}
+.user-data-tip-right{
+    left:-190px;
+}
+.user-data-tip-up{
+    top:auto;
+    bottom:50px;
+}
+.bigstars .user-data-tip{
+    top:150px;
+}
+.bigstars .user-data-tip-right{
+    left:-150px;
+}
+.bigstars .user-data-tip-up{
+    top:-150px;
+}
+.big2 .user-data-tip-up{
+    top:auto;
+    bottom:130px;
+}
+
+.user-data-tip-arrow{
+    width: 30px;
+    height: 30px;
+    background: url(../../images/pages/bg.png) -508px -455px;
+     position:absolute;
+     left:50px;
+     top:-30px;
+}
+.user-data-tip-right .user-data-tip-arrow{
+     left: 200px;
+}
+.user-data-tip-up .user-data-tip-arrow{
+    background: url(../../images/pages/bg.png) -550px -455px;
+    top: auto;
+    bottom: -22px;
+}
+.user-data-tip-left-middle{
+    left:50px;
+    top:-30px;
+}
+.user-data-tip-right-middle{
+    left: -282px;
+    top: -25px;
+}   
+.bigstars .user-data-tip-left-middle{
+    left: 175px;
+    top: 20px;
+} 
+.bigstars .user-data-tip-right-middle{
+    left: -255px;
+    top: 20px;
+} 
+.user-data-tip-left-middle .user-data-tip-arrow{
+   width: 30px;
+    height: 30px;
+    background: url(../../images/pages/bg.png) -451px -539px;
+    position: absolute;
+    left: -30px;
+    top: 37px;
+}
+.user-data-tip-right-middle .user-data-tip-arrow{
+    width: 30px;
+    height: 30px;
+    background: url(../../images/pages/bg.png) -533px -535px;
+    position: absolute;
+    top: 36px;
+    left: 282px;
+}
+
+.user-data-tip-title{
+      font-size: 16px;
+    background: url(http://n.sinaimg.cn/astro/xuyuanxing/images/pages/bg.png) -210px -1115px;
+    padding-left: 30px;
+    padding-bottom:3px;
+}
+.yellow{
+    color:#f8f0c7; 
+    margin-right:10px;
+    float:left;
+}
+.left-arrow{
+    background: url(../../images/pages/bg.png) -196px -652px;
+    width:160px;
+    height:160px;
+}
+.right-arrow{
+    background: url(../../images/pages/bg.png) -404px -660px;
+    width:160px;
+    height:160px;
+}
+/*ie9 fix*/
+@media screen{
+    .user-data-tip{
+      filter:none;  
+    }
+    .scrollRight:hover,.scrollLeft:hover{
+        filter:none; 
+    }
+}
+
+
+#uni_footer {width: 1000px;
+             line-height: 28px;
+             text-align: center;
+             color: #b5b5b5;
+             font-size: 12px;
+             padding-top: 20px;
+             border-top: 1px solid #3c1942;
+             position: absolute;
+             left:50%;
+             margin-left: -500px;
+             top: 1100px;
+             height: 140px;}
+
+
+ .read{
+    color:#f8f0c7;
+}
+.user-data-tip p{
+    padding:8px 0;
+}
+.user-data-tip-right-bottom{
+    left:auto;
+    right: 50px;
+    top: auto;
+    bottom:50px;
+}
+.user-data-tip-right-bottom .user-data-tip-arrow{
+    background: url(../../images/pages/bg.png) -550px -455px;
+    bottom: -22px;
+    top: auto;
+    left: auto;
+    right: 0;
+    transform-origin: left top;
+    transform: rotate(-45deg);
+    display:none\9;
+}
+.user-data-tip-left-bottom{
+    left:50px;
+    top: auto;
+    bottom:50px;
+}
+.user-data-tip-left-bottom .user-data-tip-arrow{
+    background: url(../../images/pages/bg.png) -550px -455px;
+    bottom: 0px;
+    top: auto;
+    left: 8px;
+    transform-origin: left top;
+    transform: rotate(47deg);
+    display:none\9;
+}
