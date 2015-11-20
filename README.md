@@ -20,6 +20,11 @@ html中格式注意
               <!-- build:js js/pages/peep.js-->
           <script src="http://n.sinaimg.cn/astro/xuyuanxing/js/pages/peep.js"></script>
           <!-- endbuild -->
+		  
+		         <!-- build:section -->
+          <html src='common/core.html'/>
+          <!-- endbuild -->
+		  //如果引入build section 可以实现html组件化引入
             
             <!-- build:文件类型 相对于根目录的地址文件名，用于查找文件，重要-->
               中间包裹一个外引链接，因为combo功能我们用require，import实现，所以这么配置

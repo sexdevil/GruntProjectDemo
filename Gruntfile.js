@@ -11,20 +11,9 @@ module.exports = function (grunt) {
         requirejsOpt = getRequirejsConfig(),
         cssImport = cssConfig.css_import,
         cssmin = cssConfig.cssmin;
-    //配置core文件打包
-    var core = buildConfig.core,
-        coreSrc = [],
-        coreConf;
+ 
 
-    for (var i = 0; i < core.length; i++) {
 
-        coreSrc.push('<%=srcRoot%>/js/' + core[i]);
-    }
-
-    coreConf = {
-        src: coreSrc,
-        dest: '<%=destRoot%>/js/core/core.js'
-    };
 
     grunt.initConfig({
         requirejs: requirejsOpt,
@@ -37,7 +26,7 @@ module.exports = function (grunt) {
             },
             js: {
                 cwd: "<%=srcRoot%>/js/",
-                src: ['common/**', 'comp/**', 'core/**', 'pl/**', 'tpl/**'],
+                src: ['common/**', 'comp/**', 'pages/**', 'pl/**', 'tpl/**'],
                 expand: true,
                 dest: "dest/js/"
             },
@@ -67,19 +56,7 @@ module.exports = function (grunt) {
         },
         css_import: cssImport,
         cssmin: cssmin,
-        uglify: {
-            core: coreConf
-        },
-        sprite:{
-            all:{
-                src:['<%=srcRoot%>/images/pages/images/*.png'],
-                dest:'<%=srcRoot%>/images/pages/timeline/icon.sprite.png',
-                destCss:'<%=cssRoot%>/module/icon.css',
-                padding:10
-            }
-        },
-        
-        
+
       filerev: {     
        
         files:{
@@ -97,6 +74,7 @@ module.exports = function (grunt) {
                     assetsDirs: ['<%=destRoot%>/css/**','<%=destRoot%>/js/**'],
                     blockReplacements: {
           js: function (block) {
+               try{
             var Filename = block.dest.replace('.js','').replace(/\//g, '\\\\')
 
           
@@ -116,10 +94,14 @@ module.exports = function (grunt) {
               var src = block.src[0];
              
               return '<script type="text/javascript" src="'+src.replace(reg,finalName)+'"></script>';  // 原地址替换md5文件名 替换完成
+              }catch(e){
+                     console.log(sFile)
+                 }
               
              },
              css:function(block){
                  
+                 try{
                  var Filename = block.dest.replace('.css','').replace(/\//g, '\\\\')
 
                      
@@ -139,9 +121,16 @@ module.exports = function (grunt) {
 
    
               return '<link rel="stylesheet" type="text/css" href="'+src.replace(reg,finalName)+'">'; // 原地址替换md5文件名 替换完成
+                }catch(e){
+                     console.log(sFile)
+                 }
              }
             }
-                 }
+            ,section:function(block){
+                 var html = require('fs').readFileSync(process.cwd()+"\\dest\\"+block.dest, 'utf-8')
+                 return html;
+             }
+            }
         },
 
         
@@ -168,6 +157,6 @@ module.exports = function (grunt) {
 
     //grunt.registerTask('p',['sprite:all']);
     grunt.registerTask('allClean', ['clean:js', 'clean:others']);
-     grunt.registerTask('default', ['allClean', 'copy', 'requirejs', 'uglify', 'css_import', 'cssmin','filerev','usemin']);
+     grunt.registerTask('default', ['allClean', 'copy', 'css_import', 'cssmin','filerev','usemin']);
  
  };
